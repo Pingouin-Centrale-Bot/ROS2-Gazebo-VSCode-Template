@@ -274,3 +274,7 @@ Solution is, to follow the guide and the test with nvidia-smi as indicated here:
 https://wiki.ros.org/docker/Tutorials/GUI
 https://medium.com/@benjamin.botto/opengl-and-cuda-applications-in-docker-af0eece000f1
 https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker
+
+# TODO
+
+- [ ] Implement [industrial_ci](https://github.com/ros-industrial/industrial_ci)
