@@ -67,7 +67,12 @@
             "detail": "Reformat files with uncrustify.",
             "type": "shell",
             "command": "ament_uncrustify --reformat src/",
-            "problemMatcher": []
+            "problemMatcher": [],
+            "options": {
+                "statusbar": {
+                    "hide": true
+                }
+            }
         },
         {
             "label": "uncrustify",
@@ -94,7 +99,12 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "options": {
+                "statusbar": {
+                    "hide": true
+                }
+            }
         },
         {
             "label": "cpplint",
@@ -108,6 +118,11 @@
                 "reveal": "silent",
                 "clear": true
             },
+            "options": {
+                "statusbar": {
+                    "hide": true
+                }
+            }
         },
         {
             "label": "cppcheck",
@@ -124,6 +139,9 @@
             "options": {
                 "env": {
                     "AMENT_CPPCHECK_ALLOW_SLOW_VERSIONS": "1"
+                },
+                "statusbar": {
+                    "hide": true
                 }
             }
         },
@@ -138,6 +156,11 @@
                 "panel": "dedicated",
                 "reveal": "silent",
                 "clear": true
+            },
+            "options": {
+                "statusbar": {
+                    "hide": true
+                }
             }
         },
         {
@@ -151,6 +174,11 @@
                 "panel": "dedicated",
                 "reveal": "silent",
                 "clear": true
+            },
+            "options": {
+                "statusbar": {
+                    "hide": true
+                }
             }
         },
         {
@@ -164,6 +192,11 @@
                 "panel": "dedicated",
                 "reveal": "silent",
                 "clear": true
+            },
+            "options": {
+                "statusbar": {
+                    "hide": true
+                }
             }
         },
         {
@@ -177,6 +210,11 @@
                 "panel": "dedicated",
                 "reveal": "silent",
                 "clear": true
+            },
+            "options": {
+                "statusbar": {
+                    "hide": true
+                }
             }
         },
         {
@@ -199,28 +237,48 @@
             "detail": "Create a new ROS cpp package from a template.",
             "type": "shell",
             "command": "ros2 pkg create --destination-directory src --build-type ament_cmake ${input:package}",
-            "problemMatcher": []
+            "problemMatcher": [],
+            "options": {
+                "statusbar": {
+                    "hide": true
+                }
+            }
         },
         {
             "label": "new ament_python package",
             "detail": "Create a new ROS python package from a template.",
             "type": "shell",
             "command": "ros2 pkg create --destination-directory src --build-type ament_python ${input:package}",
-            "problemMatcher": []
+            "problemMatcher": [],
+            "options": {
+                "statusbar": {
+                    "hide": true
+                }
+            }
         },
         {
             "label": "import from workspace file",
             "detail": "Use vcs to import modules specified by a workspace/rosinstall file.",
             "type": "shell",
             "command": "envsubst < src/ros2.repos | vcs import src",
-            "problemMatcher": []
+            "problemMatcher": [],
+            "options": {
+                "statusbar": {
+                    "hide": true
+                }
+            }
         },
         {
             "label": "update workspace file",
             "detail": "Use vcs to update repositories in src to workspace file.",
             "type": "shell",
             "command": "vcs export src > src/ros2.repos",
-            "problemMatcher": []
+            "problemMatcher": [],
+            "options": {
+                "statusbar": {
+                    "hide": true
+                }
+            }
         },
         {
             "label": "install dependencies",
@@ -241,7 +299,12 @@
             "detail": "Create a git submodule for all repositories in your .repos file",
             "type": "shell",
             "command": "python3 .devcontainer/repos_to_submodules.py",
-            "problemMatcher": []
+            "problemMatcher": [],
+            "options": {
+                "statusbar": {
+                    "hide": true
+                }
+            }
         }
     ],
     "inputs": [

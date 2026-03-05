@@ -21,8 +21,7 @@ RUN apt-get update \
     libglu1-mesa libxi6 libsm6 libxrender1 libfontconfig1
 
 # Install Gazebo
-RUN apt-get update \
-    && apt-get -y install curl lsb-release gnupg \
+RUN apt-get -y install curl lsb-release gnupg \
     && curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg \
     && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] https://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null \
     && apt-get update \

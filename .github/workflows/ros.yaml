@@ -3,24 +3,22 @@ name: ROS
 on:
   pull_request:
   push:
-    branches: 
+    branches:
       - humble*
       - iron*
       - jazzy*
       - rolling*
       - main
   workflow_dispatch:
-    
+
 jobs:
   test:
     name: test
     runs-on: ubuntu-latest
     steps:
-      - 
-        name: Checkout code
+      - name: Checkout code
         uses: actions/checkout@v5
-      -
-        name: Test
+      - name: Test
         uses: ./.github/actions/test/
 
   lint:
@@ -29,15 +27,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-          linter: [cppcheck, cpplint, uncrustify, lint_cmake, xmllint, flake8, pep257]
+        linter:
+          [cppcheck, cpplint, uncrustify, lint_cmake, xmllint, flake8, pep257]
     steps:
-      - 
-        name: Checkout code
+      - name: Checkout code
         uses: actions/checkout@v5
-      -
-        name: Run linter
+      - name: Run linter
         uses: ./.github/actions/lint/
-        env: 
+        env:
           LINTER: ${{ matrix.linter }}
 
   complete:
