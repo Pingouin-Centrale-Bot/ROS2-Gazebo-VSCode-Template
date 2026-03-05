@@ -24,11 +24,8 @@ RUN apt-get update \
 RUN apt-get -y install curl lsb-release gnupg \
     && curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg \
     && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] https://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null \
-    && apt-get -y install gz-harmonic \
-    # Clean up
-    && apt-get autoremove -y \
-    && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get update \
+    && apt-get -y install gz-harmonic
 
 ENV DEBIAN_FRONTEND=dialog
 
